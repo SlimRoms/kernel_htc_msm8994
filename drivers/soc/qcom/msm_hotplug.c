@@ -993,7 +993,7 @@ static ssize_t show_enable_hotplug(struct device *dev,
     return sprintf(buf, "%u\n", msm_enabled);
 }
 
-static ssize_t __cpuinit store_enable_hotplug(struct device *dev,
+static ssize_t __ref store_enable_hotplug(struct device *dev,
                     struct device_attribute *msm_hotplug_attrs,
                     const char *buf, size_t count)
 {
@@ -1567,7 +1567,7 @@ static int __cpuinit msm_hotplug_fb_notifier_callback(struct notifier_block *sel
     return 0;
 }
 
-struct notifier_block msm_hotplug_fb_notif = {
+struct notifier_block __refdata msm_hotplug_fb_notif = {
     .notifier_call = msm_hotplug_fb_notifier_callback,
 };
 
