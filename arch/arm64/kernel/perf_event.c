@@ -1511,7 +1511,7 @@ static void armpmu_hotplug_disable(void *parm_pmu)
  * UNKNOWN at reset, the PMU must be explicitly reset to avoid reading
  * junk values out of them.
  */
-static int cpu_pmu_notify(struct notifier_block *b,
+static int __cpuinit cpu_pmu_notify(struct notifier_block *b,
 				    unsigned long action, void *hcpu)
 {
 	int irq;
